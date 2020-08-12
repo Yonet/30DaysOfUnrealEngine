@@ -1,4 +1,4 @@
-# 30DaysOfUnrealEngine
+# 30 Days Of Unreal Engine Development
 
 30 days of [Unreal Engine Development for HoloLens 2](https://docs.microsoft.com/en-us/windows/mixed-reality/unreal-development-overview?WT.mc_id=github-30daysunreal-ayyonet) is our journey with [Em](https://github.com/lazerwalker) to learn Unreal development for Mixed Reality. We are experienced developers who are learning Unreal Development together. Follow along by downloading or forking the repo branch for the day.
 
