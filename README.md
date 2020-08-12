@@ -9,7 +9,7 @@ Catch the stream every Tuesday at [www.twitch.tv/lazerwalker](https://www.twitch
 ## Day 01 : 11 August 2020
 
 Project setup and getting to know the Unreal UI and HoloLens Unreal tutorial.
-![Day 01 Twitch Stream](images/UnrealDay01.png)
+![Day 01 Twitch Stream](Images/UnrealDay01.png)
 
 ### Links:
 
