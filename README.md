@@ -9,27 +9,3 @@ Project setup and getting to know the Unreal UI and HoloLens Unreal tutorial.
 * Starting project branch: [day-00]()
 * Ending project branch: [day-01]()
 * Video: https://www.twitch.tv/videos/707346232
-
-## Day 02 
-
-Materials.
-
-## Day 03
-
-Lighting.
-
-## Day 04 
-
-Camera and postprocessing.
-
-## Day 05
-
-Particles
-
-## Day 06
-
-Physics
-
-## Day 07
-
-
