@@ -3,7 +3,7 @@
 * [Links Cheat Sheet](./LinksCheatSheet.md)
 * [Day 01](#day-01--11-august-2020)
 * [Day 02](#day-02--18-august-2020)
-* [Day 03](#day-03-25-august-2020)
+* [Day 03](#day-03-27-august-2020)
 
 ## Overview
 
@@ -42,16 +42,19 @@ Making your scene interactive.
 * Ending project branch: [day-02](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-02)
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 03: 25 August 2020
+## Day 03: 27 August 2020
 
 ### Links
 
 * [Day 3 Tutorial](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch4?WT.mc_id=github-30daysunreal-ayyonet)
 * Starting project branch: [day-02](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-02)
 * Ending project branch: [day-03](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-03)
+* Live Stream: 
+  * [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=github-30daysunreal-ayyonet): https://bit.ly/LearnTV
+  * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 04: 27 August 2020
+## Day 04: 1 September 2020
 
 ### Links
 
@@ -60,7 +63,7 @@ Making your scene interactive.
 * Ending project branch: [day-04](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04)
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 05: 1 September 2020
+## Day 05: 3 September 2020
 
 ### Links
 
@@ -69,7 +72,7 @@ Making your scene interactive.
 * Ending project branch: [day-05](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-05)
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 06: 3 September 2020
+## Day 06: 8 September 2020
 
 ### Links
 
