@@ -62,7 +62,10 @@ Making your scene interactive.
 * [Day 4 Tutorial](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch4?WT.mc_id=github-30daysunreal-ayyonet)
 * Starting project branch: [day-03](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-03)
 * Ending project branch: [day-04](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04)
-* Video: https://www.twitch.tv/videos/714352020
+* Live Stream: 
+  * [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=github-30daysunreal-ayyonet): https://bit.ly/LearnTV
+  * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
+* Video: https://www.twitch.tv/videos/723406817
 
 ## Day 05: 3 September 2020
 
