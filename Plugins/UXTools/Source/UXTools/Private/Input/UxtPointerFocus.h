@@ -4,11 +4,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
-#include "UObject/WeakObjectPtrTemplates.h"
 
-class UActorComponent;
-class UPrimitiveComponent;
 class UUxtNearPointerComponent;
 
 /** Result of closest point search functions. */
@@ -54,9 +50,6 @@ public:
 
 	/** Select and set the focused target among the list of overlaps. */
 	void SelectClosestTarget(UUxtNearPointerComponent* Pointer, const FTransform& PointerTransform, const TArray<FOverlapResult>& Overlaps);
-
-	/** Update the ClosestTargetPoint while focus is locked */
-	void UpdateClosestTarget(const FTransform& PointerTransform);
 
 	/** Select the closest primitive from the owner of the given target component.
 	 *  The target component will be the new focus, unless no usable primitive can be found.
@@ -146,23 +139,13 @@ protected:
 private:
 
 	bool bIsGrabbing = false;
+
 };
 
 
 /** Focus implementation for the poke pointers. */
 struct FUxtPokePointerFocus : public FUxtPointerFocus
 {
-public:
-
-	/** Notify the target object that poke has started. */
-	void BeginPoke(UUxtNearPointerComponent* Pointer);
-	/** Notify the poked target object that the pointer has been updated. */
-	void UpdatePoke(UUxtNearPointerComponent* Pointer);
-	/** Notify the target object that poke has ended. */
-	void EndPoke(UUxtNearPointerComponent* Pointer);
-
-	bool IsPoking() const;
-
 protected:
 
 	virtual UClass* GetInterfaceClass() const override;
@@ -174,8 +157,4 @@ protected:
 	virtual void RaiseEnterFocusEvent(UObject* Target, UUxtNearPointerComponent* Pointer) const override;
 	virtual void RaiseUpdateFocusEvent(UObject* Target, UUxtNearPointerComponent* Pointer) const override;
 	virtual void RaiseExitFocusEvent(UObject* Target, UUxtNearPointerComponent* Pointer) const override;
-
-private:
-
-	bool bIsPoking = false;
 };

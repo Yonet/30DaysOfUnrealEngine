@@ -4,14 +4,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "InputCoreTypes.h"
 #include "Components/ActorComponent.h"
-#include "UxtPointerComponent.h"
 #include "UxtNearPointerComponent.generated.h"
 
 struct FUxtGrabPointerFocus;
 struct FUxtPokePointerFocus;
-class UMaterialParameterCollection;
 
 /**
  * Adds poke and grab interactions to an actor.
@@ -19,7 +16,7 @@ class UMaterialParameterCollection;
  * Targets use the transform of pointers focusing them to drive their interactions.
  */
 UCLASS(ClassGroup = UXTools, meta = (BlueprintSpawnableComponent))
-class UXTOOLS_API UUxtNearPointerComponent : public UUxtPointerComponent
+class UXTOOLS_API UUxtNearPointerComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -31,19 +28,9 @@ public:
 	// 
 	// UActorComponent interface
 
-	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	virtual void SetActive(bool bNewActive, bool bReset = false) override;
-
-	// 
-	// UUxtPointerComponent interface
-
-	virtual UObject* GetFocusTarget() const override;
-	virtual FTransform GetCursorTransform() const override;
-
-	/** Update poke distances and detect if poking the target. */
-	void UpdatePokeInteraction();
 
 	/** Returns currently focused grab target or null if there is none. */
 	UFUNCTION(BlueprintPure, Category = "Hand Pointer")
@@ -67,6 +54,14 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Hand Pointer")
 	bool SetFocusedPokeTarget(UActorComponent* NewFocusedTarget, bool bEnableFocusLock);
 
+	/** Returns whether the pointer is locked on the currently focused target. */
+	UFUNCTION(BlueprintGetter)
+	bool GetFocusLocked() const;
+
+	/** Sets whether the pointer is locked on the currently focused target. */
+	UFUNCTION(BlueprintSetter)
+	void SetFocusLocked(bool Value);
+
 	UFUNCTION(BlueprintGetter)
 	bool IsGrabbing() const;
     
@@ -78,6 +73,12 @@ public:
 	FTransform GetPokePointerTransform() const;
 	UFUNCTION(BlueprintPure, Category = "Hand Pointer")
 	float GetPokePointerRadius() const;
+
+	/** The hand that this component represents.
+	 *  Determines the position of touch and grab pointers.
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Pointer")
+	EControllerHand Hand = EControllerHand::Right;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Pointer")
 	TEnumAsByte<ECollisionChannel> TraceChannel = ECollisionChannel::ECC_Visibility;
@@ -96,14 +97,13 @@ public:
 	 */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Pointer")
 	float PokeDepth = 20.0f;
-	
+
 	/**
-	 * The distance the fingertip must be from a pokeable in order to fire a poke end event. This is
-	 * used in order to distinguish the queries for poke begin and poke end so you cannot easily 
-	 * cause end touch to fire one frame and begin touch to fire on the next frame.
+	 * Whether the pointer is locked on its current focused target.
+	 * When locked, pointers won't change their focused target even if they stop overlapping it.
 	 */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Pointer")
-	float DebounceDepth = 0.5f;
+	UPROPERTY(BlueprintReadWrite, Category = "Hand Pointer")
+	bool bFocusLocked = false;
 
 protected:
 
@@ -115,19 +115,13 @@ protected:
 
 private:
 
-	void UpdateParameterCollection(FVector IndexTipPosition);
-
-	/** Parameter collection used to store the finger tip position */
-	UPROPERTY(Transient)
-	UMaterialParameterCollection* ParameterCollection;
-
 	FTransform GrabPointerTransform;
 
 	FTransform PokePointerTransform;
 
+	bool bIsPoking = false;
+
 	FVector PreviousPokePointerLocation;
 
 	bool bWasBehindFrontFace = false;
-
-	bool bHandWasGrabbing = false;
 };

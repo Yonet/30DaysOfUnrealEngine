@@ -9,6 +9,7 @@
 
 class UUxtNearPointerComponent;
 class UUxtFarPointerComponent;
+class UMaterialParameterCollection;
 
 
 /**
@@ -62,31 +63,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Interaction", meta = (DisplayAfter = "PokeRadius"))
 	float NearActivationDistance = 20.0f;
 
-	/** Create default visuals for the near cursor. Changes to this value after BeginPlay have no effect. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = "Hand Interaction")
-	bool bUseDefaultNearCursor = true;
-
-	/** Create default visuals for the far cursor. Changes to this value after BeginPlay have no effect. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = "Hand Interaction")
-	bool bUseDefaultFarCursor = true;
-
-	/** Create default visuals for the far beam. Changes to this value after BeginPlay have no effect. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = "Hand Interaction")
-	bool bUseDefaultFarBeam = true;
-
-	/** Show the near cursor on grab targets. Changes to this value after BeginPlay have no effect. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, AdvancedDisplay, Category = "Hand Interaction", meta = (ExposeOnSpawn = true))
-	bool bShowNearCursorOnGrabTargets = false;
-
-private:
-
-	/** Determine if the hand pose is valid for making selections. */
-	bool IsInPointingPose() const;
+	/** When set create default visuals automatically for near and far cursors and far beam */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Hand Interaction", meta = (DisplayAfter = "NearActivationDistance"))
+	bool bUseDefaultVisuals = true;
 
 private:
 
 	/** Articulated hand used to drive interactions. */
-	UPROPERTY(EditAnywhere, BlueprintGetter = "GetHand", BlueprintSetter = "SetHand", Category = "Hand Interaction", meta = (ExposeOnSpawn = true))
+	UPROPERTY(EditAnywhere, BlueprintGetter = "GetHand", BlueprintSetter = "SetHand", Category = "Hand Interaction")
 	EControllerHand Hand;
 
 	/** Offset from the hand ray origin at which the far ray used for far target selection starts. */
@@ -111,6 +95,6 @@ private:
 	UPROPERTY(Transient)
 	UUxtFarPointerComponent* FarPointer;
 
-	bool bHadTracking = false;
-	FVector PrevQueryPosition;
+	UPROPERTY(Transient)
+	UMaterialParameterCollection* ParameterCollection;
 };

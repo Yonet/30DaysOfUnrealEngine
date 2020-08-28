@@ -37,9 +37,7 @@ enum class EUxtHandJoint : uint8
 	LittleProximal,
 	LittleIntermediate,
 	LittleDistal,
-	LittleTip,
-
-	Count UMETA(Hidden, DisplayName = "<INVALID>")
+	LittleTip
 };
 
 /**

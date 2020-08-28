@@ -7,8 +7,6 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UxtFunctionLibrary.generated.h"
 
-struct FComponentReference;
-class AActor;
 /**
  * Library of utility functions for UX Tools.
  */
@@ -26,9 +24,5 @@ public:
 	/** Returns true if we are running in editor (not game mode or VR preview). */
 	UFUNCTION(BlueprintPure, Category = "UXTools")
 	static bool IsInEditor();
-
-
-	/** Returns the scene component the passed component reference is pointing to if there is any - else will return nullptr. */
-	static USceneComponent* GetSceneComponentFromReference(const FComponentReference& ComponentRef, const AActor* Owner);
 };
 

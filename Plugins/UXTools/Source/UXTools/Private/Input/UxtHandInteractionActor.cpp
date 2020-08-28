@@ -11,7 +11,10 @@
 #include "HandTracking/IUxtHandTracker.h"
 #include "Interactions/UxtGrabTarget.h"
 #include "Interactions/UxtPokeTarget.h"
-#include "Utils/UxtFunctionLibrary.h"
+#include "UObject/ConstructorHelpers.h"
+#include "Materials/MaterialParameterCollection.h"
+#include "Materials/MaterialParameterCollectionInstance.h"
+#include "UXTools.h"
 
 
 AUxtHandInteractionActor::AUxtHandInteractionActor(const FObjectInitializer& ObjectInitializer)
@@ -28,6 +31,10 @@ AUxtHandInteractionActor::AUxtHandInteractionActor(const FObjectInitializer& Obj
 	FarPointer = CreateDefaultSubobject<UUxtFarPointerComponent>(TEXT("FarPointer"));
 	FarPointer->PrimaryComponentTick.bStartWithTickEnabled = false;
 	FarPointer->AddTickPrerequisiteActor(this);
+
+	static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> Finder(TEXT("/UXTools/Pointers/PointerPositions"));
+	check(Finder.Object);
+	ParameterCollection = Finder.Object;
 }
 
 // Called when the game starts or when spawned
@@ -44,29 +51,19 @@ void AUxtHandInteractionActor::BeginPlay()
 	FarPointer->RayStartOffset = RayStartOffset;
 	FarPointer->RayLength = RayLength;
 
-	if (bUseDefaultNearCursor)
+	// Create default visuals
+	if (bUseDefaultVisuals)
 	{
 		UUxtFingerCursorComponent* NearCursor = NewObject<UUxtFingerCursorComponent>(this);
 		NearCursor->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-		NearCursor->bShowOnGrabTargets = bShowNearCursorOnGrabTargets;
 		NearCursor->RegisterComponent();
-	}
 
-	if (bUseDefaultFarCursor)
-	{
 		UUxtFarCursorComponent* FarCursor = NewObject<UUxtFarCursorComponent>(this);
 		FarCursor->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 		FarCursor->RegisterComponent();
-	}
 
-	if (bUseDefaultFarBeam)
-	{
 		UUxtFarBeamComponent* FarBeam = NewObject<UUxtFarBeamComponent>(this);
-		
-		// Prevent self Transform from affecting the FarBeam's one
-		FarBeam->SetAbsolute(true, true, true);
-
-		FarBeam->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform);
+		FarBeam->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 		FarBeam->RegisterComponent();
 	}
 }
@@ -99,25 +96,35 @@ void AUxtHandInteractionActor::Tick(float DeltaTime)
 
 		if (bIsTracked)
 		{
+			// Update finger tip position in material parameter collection
+			if (ParameterCollection)
+			{
+				UMaterialParameterCollectionInstance* ParameterCollectionInstance = GetWorld()->GetParameterCollectionInstance(ParameterCollection);
+				static FName ParameterNames[] = { "LeftPointerPosition", "RightPointerPosition" };
+				FName ParameterName = Hand == EControllerHand::Left ? ParameterNames[0] : ParameterNames[1];
+				const bool bFoundParameter = ParameterCollectionInstance->SetVectorParameterValue(ParameterName, FingerTipPosition);
+				if (!bFoundParameter)
+				{
+					UE_LOG(UXTools, Warning, TEXT("Unable to find %s parameter in material parameter collection %s."), *ParameterName.ToString(), *ParameterCollection->GetPathName());
+				}
+			}
+
 			const FVector Forward = FingerTipOrientation.GetForwardVector();
 			const FVector FingerTipPositionOnSkin = FingerTipPosition + Forward * JointRadius;
 
-			const float SphereRadius = 0.5f * NearActivationDistance;
-			FVector QueryPosition = FingerTipPositionOnSkin + Forward * SphereRadius;
-
 			// Only switch between near and far if none of the pointers is locked
-			if (bHadTracking && !NearPointer->GetFocusLocked() && !FarPointer->GetFocusLocked())
+			if (!NearPointer->GetFocusLocked() && !FarPointer->GetFocusLocked())
 			{
 				// Near-far activation query
-				TArray<FHitResult> Overlaps;
-				// Disable complex collision to enable overlap from inside primitives
-				FCollisionQueryParams QueryParams(NAME_None, false);
+				TArray<FOverlapResult> Overlaps;
+				const float SphereRadius = 0.5f * NearActivationDistance;
+				FVector QueryPosition = FingerTipPositionOnSkin + Forward * SphereRadius;
 				FCollisionShape QuerySphere = FCollisionShape::MakeSphere(SphereRadius);
-				GetWorld()->SweepMultiByChannel(Overlaps, PrevQueryPosition, QueryPosition, FQuat::Identity, TraceChannel, QuerySphere, QueryParams);
+				GetWorld()->OverlapMultiByChannel(Overlaps, QueryPosition, FQuat::Identity, TraceChannel, QuerySphere);
 
 				// Look for a near target in the overlaps
 				bool bHasNearTarget = false;
-				for (const FHitResult& Overlap : Overlaps)
+				for (const FOverlapResult& Overlap : Overlaps)
 				{
 					if (IsNearTarget(Overlap.GetComponent()))
 					{
@@ -126,34 +133,21 @@ void AUxtHandInteractionActor::Tick(float DeltaTime)
 					}
 				}
 
-				// Disable the pointers if the hand is facing upwards
-				if (IsInPointingPose())
+				// Update pointers activation state
+				if (bHasNearTarget != NearPointer->IsActive())
 				{
-					// Update pointers activation state
-					if (bHasNearTarget != NearPointer->IsActive())
-					{
-						NearPointer->SetActive(bHasNearTarget);
-					}
-					if (bHasNearTarget == FarPointer->IsActive())
-					{
-						FarPointer->SetActive(!bHasNearTarget);
-					}
+					NearPointer->SetActive(bHasNearTarget);
+					
 				}
-				else
+				if (bHasNearTarget == FarPointer->IsActive())
 				{
-					NearPointer->SetActive(false);
-					FarPointer->SetActive(false);
+					FarPointer->SetActive(!bHasNearTarget);
 				}
 			}
-
-			bHadTracking = true;
-			PrevQueryPosition = QueryPosition;
 		}
 		else
 		{
 			// Hand not tracked
-			bHadTracking = false;
-
 			if (NearPointer->IsActive())
 			{
 				NearPointer->SetActive(false);
@@ -196,45 +190,4 @@ void AUxtHandInteractionActor::SetRayLength(float NewRayLength)
 {
 	RayLength = NewRayLength;
 	FarPointer->RayLength = NewRayLength;
-}
-
-bool AUxtHandInteractionActor::IsInPointingPose() const
-{
-	constexpr float PointerBeamBackwardTolerance = 0.5f;
-	constexpr float PointerBeamUpwardTolerance = 0.8f;
-
-	IUxtHandTracker* HandTracker = IUxtHandTracker::GetHandTracker();
-	if (!HandTracker)
-	{
-		return false;
-	}
-
-	FQuat PalmOrientation;
-	FVector PalmPosition;
-	float PalmRadius;
-
-	if (HandTracker->GetJointState(Hand, EUxtHandJoint::Palm, PalmOrientation, PalmPosition, PalmRadius))
-	{
-		FVector PalmNormal = PalmOrientation * FVector::DownVector;
-		PalmNormal.Normalize();
-
-		if (PointerBeamBackwardTolerance >= 0)
-		{
-			FVector CameraBackward = -UUxtFunctionLibrary::GetHeadPose(GetWorld()).GetRotation().GetForwardVector();
-			if (FVector::DotProduct(PalmNormal, CameraBackward) > PointerBeamBackwardTolerance)
-			{
-				return false;
-			}
-		}
-
-		if (PointerBeamUpwardTolerance >= 0)
-		{
-			if (FVector::DotProduct(PalmNormal, FVector::UpVector) > PointerBeamUpwardTolerance)
-			{
-				return false;
-			}
-		}
-	}
-
-	return true;
 }

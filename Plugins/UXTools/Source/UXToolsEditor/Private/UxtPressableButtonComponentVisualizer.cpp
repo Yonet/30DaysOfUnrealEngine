@@ -4,7 +4,7 @@
 #include "UxtPressableButtonComponentVisualizer.h"
 #include "UXToolsEditor.h"
 #include <SceneManagement.h>
-#include "Utils/UxtMathUtilsFunctionLibrary.h"
+#include <Components/StaticMeshComponent.h>
 
 namespace
 {
@@ -12,10 +12,10 @@ namespace
 	{	
 		FVector Vertices[] =
 		{
-			FVector(-PressedDistance, Width, Height),
-			FVector(-PressedDistance, Width, -Height),
-			FVector(-PressedDistance, -Width, -Height),
-			FVector(-PressedDistance, -Width, Height)
+			FVector(PressedDistance, Width, Height),
+			FVector(PressedDistance, Width, -Height),
+			FVector(PressedDistance, -Width, -Height),
+			FVector(PressedDistance, -Width, Height)
 		};
 
 		for (int i = 0; i < 4; ++i)
@@ -38,30 +38,29 @@ void FUxtPressableButtonComponentVisualizer::DrawVisualization(const UActorCompo
 {
 	if (const UUxtPressableButtonComponent* Button = Cast<const UUxtPressableButtonComponent>(Component))
 	{
-		if (USceneComponent* Visuals = Button->GetVisuals())
+		if (UStaticMeshComponent* Mesh = Cast<UStaticMeshComponent>(Button->GetVisuals()))
 		{
-			FTransform LocalToTarget = Visuals->GetComponentTransform() * Button->GetComponentTransform().Inverse();
-			FBox Bounds = UUxtMathUtilsFunctionLibrary::CalculateHierarchyBounds(Visuals, LocalToTarget, UUxtPressableButtonComponent::VisualBoundsFilter).GetBox();
+			FVector Min, Max;
+			Mesh->GetLocalBounds(Min, Max);
 
-			FTransform ToFrontFace = FTransform(FVector(Bounds.Max.X, 0, 0));
-			FMatrix FrontFaceMatrix = (ToFrontFace * Button->GetComponentTransform()).ToMatrixNoScale();
+			FTransform ToFrontFace = FTransform(FVector(Min.X, 0, 0));
+			FMatrix FrontFaceMatrix = (ToFrontFace * Mesh->GetComponentTransform()).ToMatrixNoScale();
 
-			FVector Extents = Bounds.GetExtent();
-			Extents *= Button->GetComponentTransform().GetScale3D();
+			FVector Extents = (Max - Min) * 0.5f;
+			Extents *= Mesh->GetComponentTransform().GetScale3D();
 
 			// Rest position
-			const float MaxPushDistance = Button->GetScaleAdjustedMaxPushDistance();
-			const float FrontFaceMargin = Button->GetFrontFaceCollisionFraction() * MaxPushDistance;
-			DrawQuad(PDI, Extents.Y, Extents.Z, -FrontFaceMargin, FrontFaceMatrix, FLinearColor::White);
+			DrawQuad(PDI, Extents.Y, Extents.Z, 0, FrontFaceMatrix, FLinearColor::White);
 
 			// Maximum push distance
+			const float MaxPushDistance = Button->MaxPushDistance;
 			FLinearColor DarkGray(.25f, .25f, .25f);
-			DrawQuad(PDI, Extents.Y, Extents.Z, MaxPushDistance - FrontFaceMargin, FrontFaceMatrix, DarkGray);
+			DrawQuad(PDI, Extents.Y, Extents.Z, MaxPushDistance, FrontFaceMatrix, DarkGray);
 
 			// Pressed distance
-			const float PressedDistance = MaxPushDistance * Button->PressedFraction;
+			float PressedDistance = MaxPushDistance * Button->PressedFraction;
 			FLinearColor LightGray(.75f, .75f, .75f);
-			DrawQuad(PDI, Extents.Y, Extents.Z, PressedDistance - FrontFaceMargin, FrontFaceMatrix, LightGray, true);
+			DrawQuad(PDI, Extents.Y, Extents.Z, PressedDistance, FrontFaceMatrix, LightGray, true);
 		}
 	}
 }

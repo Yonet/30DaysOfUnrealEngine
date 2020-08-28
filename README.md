@@ -53,7 +53,7 @@ Making your scene interactive.
 * Live Stream: 
   * [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=github-30daysunreal-ayyonet): https://bit.ly/LearnTV
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
-* Video: https://www.twitch.tv/videos/714352020
+* Video: https://www.twitch.tv/videos/723406817
 
 ## Day 04: 1 September 2020
 
