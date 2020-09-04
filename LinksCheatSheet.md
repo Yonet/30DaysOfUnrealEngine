@@ -1,14 +1,16 @@
 # Unreal Engine Development links cheatsheet
 
 * Shortlink to Github Repo: [bit.ly/30DaysOfUnreal](https://bit.ly/30DaysOfUnreal)
-* Twitch Live Stream Channel: [www.twitch.tv/lazerwalker](www.twitch.tv/lazerwalker)
-* HoloLens Unreal Development Documentation: [bit.ly/HoloLensUnrealDev](http://bit.ly/HoloLensUnrealDev)
-* Unreal Engine Download: [www.unrealengine.com/e](https://www.unrealengine.com/)
-* Mixed Reality UX Tools for Unreal Repo: [bit.ly/MRUXToolsUnreal](https://bit.ly/MRUXToolsUnreal)
+* HoloLens Unreal Development Documentation: [bit.ly/HoloLensUnrealDev](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview?WT.mc_id=spatial-6125-ayyonet)
+* Microsoft Learn TV stream: [bit.ly/LearnTV](https://docs.microsoft.com/learn/tv/?WT.mc_id=spatial-6125-ayyonet)
+* Twitch Microsoft Developer Live Stream Channel: [https://www.twitch.tv/microsoftdeveloper](https://www.twitch.tv/microsoftdeveloper)
+* Unreal Engine Download: [www.unrealengine.com](https://www.unrealengine.com/)
+* Chess App Tutorial: [bit.ly/UnrealChessApp](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1?WT.mc_id=spatial-6125-ayyonet)
+* Mixed Reality UX Tools for Unreal Repo: [bit.ly/MRUXToolsUnreal](https://github.com/microsoft/MixedReality-UXTools-Unreal?WT.mc_id=spatial-6125-ayyonet)
 
 ![Mixed Reality UX Tools for Unreal](Images/uXToolsFeatures.png)
 
-* Mixed Reality Unreal Samples Repo: [bit.ly/MixedRealityUnrealSamples](https://bit.ly/MixedRealityUnrealSamples)
+* Mixed Reality Unreal Samples Repo: [bit.ly/MixedRealityUnrealSamples](https://github.com/microsoft/MixedReality-Unreal-Samples?WT.mc_id=spatial-6125-ayyonet)
 <!-- 
 *[]()
 *[]()
