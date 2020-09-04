@@ -55,7 +55,7 @@ Making your scene interactive.
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/723406817
 
-## Day 04: 1 September 2020
+## Day 04: 8 September 2020
 
 ### Links
 
@@ -67,7 +67,7 @@ Making your scene interactive.
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/723406817
 
-## Day 05: 3 September 2020
+## Day 05: 10 September 2020
 
 ### Links
 
@@ -76,7 +76,7 @@ Making your scene interactive.
 * Ending project branch: [day-05](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-05)
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 06: 8 September 2020
+## Day 06: 15 September 2020
 
 ### Links
 
