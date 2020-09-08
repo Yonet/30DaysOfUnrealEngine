@@ -5,7 +5,7 @@
 * [Day 01](#day-01--11-august-2020)
 * [Day 02](#day-02--18-august-2020)
 * [Day 03](#day-03-27-august-2020)
-* [Day 04](#day-03-8-september-2020)
+* [Day 04](#day-04-10-september-2020)
 
 ## Overview
 
@@ -78,7 +78,7 @@ Making your scene interactive.
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/723406817
 
-## Day 04: 8 September 2020
+## Day 04: 10 September 2020
 
 ### Links
 
