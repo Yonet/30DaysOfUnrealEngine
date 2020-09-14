@@ -9,7 +9,8 @@
 - [ ] While you're holding a piece, highlight all valid squares on the board 
 - [ ] Add in support for castling (after you move the king, automatically move the rook into the correct position) 
 - [ ] Add in support/UI for promoting a pawn (after moving a pawn to the correct square, show a bunch of buttons letting you select what piece to promote to, then replace the pawn on the board) 
-- [ ] Add in Azure Cognitive Services voice support for moves (e.g. “Pawn to D4”) 
+- [ ] Add in [Azure Cognitive Services voice support](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started-speech-to-text?pivots=programming-language-javascript&tabs=script%2Cwindowsinstall&WT.mc_id=aiml-8438-ayyonet) for moves (e.g. “Pawn to D4”) 
+- [ ] Add support for [Multi device conversation](https://docs.microsoft.com/azure/cognitive-services/speech-service/multi-device-conversation?WT.mc_id=aiml-8438-ayyonet)
 - [ ] Add in naive networking (given two copies of the game open, send board data updates between the two — a good chance to use PlayFab?) 
 - [ ] Add the concept of "turns" and “players”. You can only move  on your turn, and you can only move your own pieces 
 - [ ] Add in a chess AI to play against the computer? 
