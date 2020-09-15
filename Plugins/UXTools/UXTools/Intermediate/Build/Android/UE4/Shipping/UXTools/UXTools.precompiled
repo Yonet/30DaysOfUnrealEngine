@@ -1,0 +1,14 @@
+{
+	"OutputFiles": [
+		"Module.UXTools.cppa7.o",
+		"Module.UXTools.cppa8.o",
+		"Module.UXTools.gen.1_of_4.cppa7.o",
+		"Module.UXTools.gen.2_of_4.cppa7.o",
+		"Module.UXTools.gen.3_of_4.cppa7.o",
+		"Module.UXTools.gen.4_of_4.cppa7.o",
+		"Module.UXTools.gen.1_of_4.cppa8.o",
+		"Module.UXTools.gen.2_of_4.cppa8.o",
+		"Module.UXTools.gen.3_of_4.cppa8.o",
+		"Module.UXTools.gen.4_of_4.cppa8.o"
+	]
+}

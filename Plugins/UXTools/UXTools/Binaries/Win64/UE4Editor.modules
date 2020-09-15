@@ -1,0 +1,11 @@
+{
+	"BuildId": "13144385",
+	"Modules": 
+	{
+		"UXTools": "UE4Editor-UXTools.dll",
+		"UXToolsEditor": "UE4Editor-UXToolsEditor.dll",
+		"UXToolsInputSimulation": "UE4Editor-UXToolsInputSimulation.dll",
+		"UXToolsRuntimeSettings": "UE4Editor-UXToolsRuntimeSettings.dll",
+		"UXToolsWMR": "UE4Editor-UXToolsWMR.dll"
+	}
+}
