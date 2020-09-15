@@ -12,6 +12,7 @@
 
 * Mixed Reality Unreal Samples Repo: [bit.ly/MixedRealityUnrealSamples](https://github.com/microsoft/MixedReality-Unreal-Samples?WT.mc_id=spatial-6125-ayyonet)
 * [Unreal Development Core Building Blocks](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview?tabs=mrtk%2Casa&WT.mc_id=spatial-6125-ayyonet#2-core-building-blocks)
+* [Purchase HoloLens](https://www.microsoft.com/p/holoLens-2/91pnzzznzwcp/?activetab=pivot:overviewtab&WT.mc_id=spatial-6125-ayyonet)
 * [Azure Cognitive Services Overview](https://docs.microsoft.com/azure/cognitive-services/what-are-cognitive-services?WT.mc_id=aiml-8438-ayyonet)
 * [Azure Cognitive Services Documentation](https://docs.microsoft.com/azure/cognitive-services/?WT.mc_id=aiml-8438-ayyonet)
 * [Azure Cognitive Services Learn Modules](https://docs.microsoft.com/learn/browse/?products=azure-cognitive-services&WT.mc_id=aiml-8438-ayyonet)
