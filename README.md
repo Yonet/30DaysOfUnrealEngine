@@ -5,7 +5,7 @@
 * [Day 01](#day-01--11-august-2020)
 * [Day 02](#day-02--18-august-2020)
 * [Day 03](#day-03-27-august-2020)
-* [Day 04](#day-04-10-september-2020)
+* [Day 04](#day-04-15-september-2020)
 
 ## Overview
 
@@ -79,19 +79,19 @@ Making your scene interactive.
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/723406817
 
-## Day 04: 10 September 2020
+## Day 04: 15 September 2020
 
 ### Links
 
-* [Day 4 Tutorial](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch4?WT.mc_id=spatial-6125-ayyonet)
-* Starting project branch: [day-03](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-03)
+* [Day 4 Tutorial](https://docs.microsoft.com/en-us/windows/mixed-reality/unreal-voice-input?WT.mc_id=spatial-6125-ayyonet)
+* Starting project branch: [day-03](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04-start)
 * Ending project branch: [day-04](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04)
 * Live Stream: 
   * [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=spatial-6125-ayyonet): https://bit.ly/LearnTV
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/723406817
 
-## Day 05: 10 September 2020
+## Day 05: 17 September 2020
 
 ### Links
 
@@ -100,7 +100,7 @@ Making your scene interactive.
 * Ending project branch: [day-05](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-05)
 * Video: https://www.twitch.tv/videos/714352020
 
-## Day 06: 15 September 2020
+## Day 06: 24 September 2020
 
 ### Links
 
