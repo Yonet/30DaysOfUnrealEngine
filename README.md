@@ -30,13 +30,14 @@ Catch the stream every Tuesday and Thursdays at [Microsoft LearnTV](https://docs
  - 5-6 PM **EST**
  - 2-3 PM **PST**
  
-* Shortlink to Github Repo: [bit.ly/30DaysOfUnreal](https://bit.ly/30DaysOfUnreal)
+
 * HoloLens Unreal Development Documentation: [bit.ly/HoloLensUnrealDev](https://docs.microsoft.com/windows/mixed-reality/unreal-development-overview?WT.mc_id=spatial-6125-ayyonet)
+* Mixed Reality UX Tools for Unreal Repo: [bit.ly/MRUXToolsUnreal](https://github.com/microsoft/MixedReality-UXTools-Unreal?WT.mc_id=spatial-6125-ayyonet)
 * Microsoft Learn TV stream: [bit.ly/LearnTV](https://docs.microsoft.com/learn/tv/?WT.mc_id=spatial-6125-ayyonet)
 * Twitch Microsoft Developer Channel: [https://www.twitch.tv/microsoftdeveloper](https://www.twitch.tv/microsoftdeveloper)
 * Unreal Engine Download: [www.unrealengine.com](https://www.unrealengine.com/)
 * Chess App Tutorial: [bit.ly/UnrealChessApp](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1?WT.mc_id=spatial-6125-ayyonet)
-* Mixed Reality UX Tools for Unreal Repo: [bit.ly/MRUXToolsUnreal](https://github.com/microsoft/MixedReality-UXTools-Unreal?WT.mc_id=spatial-6125-ayyonet)
+* Shortlink to Github Repo: [bit.ly/30DaysOfUnreal](https://bit.ly/30DaysOfUnreal)
 
 ![Mixed Reality UX Tools for Unreal](Images/uXToolsFeatures.png)
 
