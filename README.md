@@ -104,6 +104,7 @@ Making your scene interactive.
   * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/714352020
 * [UX Tools for Unreal v0.9.0 Release](https://github.com/microsoft/MixedReality-UXTools-Unreal/releases)
+* [O.9.0 Release Notes](https://microsoft.github.io/MixedReality-UXTools-Unreal/version/public/0.9.x/Docs/ReleaseNotes.html)
 * [Hand Tracking in Unreal](https://docs.microsoft.com/windows/mixed-reality/develop/unreal/unreal-hand-tracking?WT.mc_id=spatial-6125-ayyonet)
 * [UX Tools Documentation Portal](https://microsoft.github.io/MixedReality-UXTools-Unreal/version/public/0.9.x/README.html)
 * [Mixed Reality Speaker Series: How Kippy’s Escape Was Built With MRTK-Unreal](https://www.meetup.com/hololens-mr/events/273303582/)
