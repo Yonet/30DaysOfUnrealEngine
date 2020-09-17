@@ -98,8 +98,9 @@ Making your scene interactive.
 * [Day 5 Tutorial](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch4?WT.mc_id=spatial-6125-ayyonet)
 * Starting project branch: [day-04](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04)
 * Ending project branch: [day-05](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-05)
-* [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=spatial-6125-ayyonet): https://bit.ly/LearnTV
-* [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
+* Live Stream: 
+  * [Learn TV](https://docs.microsoft.com/learn/tv/?WT.mc_id=spatial-6125-ayyonet): https://bit.ly/LearnTV
+  * [Twitch Microsoft Developer Channel](https://www.twitch.tv/microsoftdeveloper): https://www.twitch.tv/microsoftdeveloper
 * Video: https://www.twitch.tv/videos/714352020
 * [UX Tools for Unreal v0.9.0 Release](https://github.com/microsoft/MixedReality-UXTools-Unreal/releases)
 * [Hand Tracking in Unreal](https://docs.microsoft.com/windows/mixed-reality/develop/unreal/unreal-hand-tracking?WT.mc_id=spatial-6125-ayyonet)
@@ -107,7 +108,7 @@ Making your scene interactive.
 * [Mixed Reality Speaker Series: How Kippy’s Escape Was Built With MRTK-Unreal](https://www.meetup.com/hololens-mr/events/273303582/)
 * [Kippy's Escape on Microsoft Store](https://www.microsoft.com/en-us/p/kippys-escape/9nbd7gl86vkd?activetab=pivot:overviewtab)
 
-![Kippy's Escape](Images/kippy.jpeg)
+![Kippy's Escape](Images/kippy.jpg)
 
 ## Day 06: 24 September 2020
 
