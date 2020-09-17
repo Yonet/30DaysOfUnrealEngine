@@ -1,7 +1,7 @@
 # 30 Days Of Unreal Engine Development
 
 * [Links Cheat Sheet](./LinksCheatSheet.md)
-* [Feature and Task list](./ProjectPlan.md)
+* [Feature and Task list](./projectPlan.md)
 * [Day 05](#day-05-17-september-2020)
 * [Day 04](#day-04-15-september-2020)
 * [Day 03](#day-03-27-august-2020)
