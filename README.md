@@ -96,6 +96,8 @@ Making your scene interactive.
 
 ### Links
 
+[![30 Days of Unreal Engine - Day 5](http://img.youtube.com/vi/1Bu9r7Gp860/0.jpg)](https://www.youtube.com/watch?v=/1Bu9r7Gp860) 
+
 * Starting project branch: [day-04](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-04)
 * Ending project branch: [day-05](https://github.com/Yonet/30DaysOfUnrealEngine/tree/day-05)
 * Live Stream: 
