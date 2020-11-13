@@ -10,7 +10,7 @@
 
 ## Overview
 
-30 days of [Unreal Engine Development for HoloLens 2](https://docs.microsoft.com/en-us/windows/mixed-reality/unreal-development-overview?WT.mc_id=spatial-6125-ayyonet) is our journey ([Ayşegül](https://github.com/Yonet) and [Em](https://github.com/lazerwalker), to learn Unreal development for Mixed Reality. We are part of [Azure Cloud Advocacy Team](https://docs.microsoft.com/en-us/windows/mixed-reality/community#azure-cloud-advocate-spatial-computing-team?WT.mc_id=spatial-6125-ayyonet) and experienced developers who are learning Unreal Development together. 
+30 days of [Unreal Engine Development for HoloLens 2](https://docs.microsoft.com/en-us/windows/mixed-reality/unreal-development-overview?WT.mc_id=spatial-6125-ayyonet) is our journey ([Ayşegül](https://github.com/Yonet) and [Em](https://github.com/lazerwalker), to learn Unreal development for Mixed Reality. We are part of [Azure Cloud Advocacy Team](https://docs.microsoft.com/windows/mixed-reality/community?WT.mc_id=spatial-0000-ayyonet#azure-cloud-advocate-spatial-computing-team?WT.mc_id=spatial-6125-ayyonet) and experienced developers who are learning Unreal Development together. 
 
 First we start our journey from the [HoloLens Chess App Tutorial](https://docs.microsoft.com/windows/mixed-reality/unreal-uxt-ch1?WT.mc_id=spatial-6125-ayyonet) and we add new features to make it a full featured game with AI, real time multi players streamed state and AI. Follow along by downloading or forking the repo branch for the day. Some of the features we will build are:
 
@@ -112,7 +112,7 @@ Making your scene interactive.
 * [Hand Tracking in Unreal](https://docs.microsoft.com/windows/mixed-reality/develop/unreal/unreal-hand-tracking?WT.mc_id=spatial-6125-ayyonet)
 * [UX Tools Documentation Portal](https://microsoft.github.io/MixedReality-UXTools-Unreal/version/public/0.9.x/README.html)
 * [Mixed Reality Speaker Series: How Kippy’s Escape Was Built With MRTK-Unreal](https://www.meetup.com/hololens-mr/events/273303582/)
-* [Kippy's Escape on Microsoft Store](https://www.microsoft.com/en-us/p/kippys-escape/9nbd7gl86vkd?activetab=pivot:overviewtab)
+* [Kippy's Escape on Microsoft Store](https://www.microsoft.com/p/kippys-escape/9nbd7gl86vkd?activetab=pivot%3Aoverviewtab&WT.mc_id=spatial-0000-ayyonet)
 
 ![Kippy's Escape](Images/kippy.jpg)
 
